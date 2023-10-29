@@ -1,7 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
+<head>r
+    <meta property="og:title" content="/dill"><meta property="og:description" content="@ dilly.in"><meta property="og:image" content="https://cdn.discordapp.com/attachments/1164394515587661954/1168309139328475308/SSyhEHw.jpg?ex=65514bac&is=653ed6ac&hm=199a78066986ff335248515249a85b7de6a804629142d331095b4760d52b5f77&"><meta property="og:url" content="https://dilly.in"><meta property="theme-color" content="#2b2d31">
     <title>/dill</title>
+    <script>
+        function typeWriter(text, i, direction, titleElement) {
+            if (direction === "forward") {
+                if (i <= text.length) {
+                    document.title = text.substring(0, i);
+                    i++;
+                    setTimeout(function() {
+                        typeWriter(text, i, "forward");
+                    }, 200); 
+                } else {
+                    setTimeout(function() {
+                        typeWriter(text, i, "backward");
+                    }, 1000); 
+                }
+            } else if (direction === "backward") {
+                if (i >= 0) {
+                    document.title = text.substring(0, i);
+                    i--;
+                    setTimeout(function() {
+                        typeWriter(text, i, "backward");
+                    }, 200); 
+                } else {
+                    setTimeout(function() {
+                        typeWriter(text, 0, "forward");
+                    }, 1000); 
+                }
+            }
+        }
+
+        window.onload = function() {
+            var title = "/dill"; 
+            typeWriter(title, 0, "forward");
+        };
+    </script>
+</head>
+<body>
     <style>    
         body {
             background-color: black;
@@ -109,7 +146,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Raleway&display=swap" rel="stylesheet">
 </head>
 <body>
-    <audio id="backgroundMusic" src="yau.bio_music.mp3" loop></audio>
+    <audio id="backgroundMusic" src="music.mp3" loop></audio>
     <div class="background-image"></div>
     <div class="overlay" id="overlay">
         <button class="enter-button" id="enterButton">CLICK TO ENTER</button>
